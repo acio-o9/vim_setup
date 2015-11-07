@@ -16,6 +16,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimfiler'
 
 call neobundle#end()
 
