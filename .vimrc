@@ -36,6 +36,11 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 
+" vimfiler
+" let g:vimfiler_as_default_explorer = 1
+" noremap <C-X><C-T> :VimFiler -split -simple -winwidth=45 -no-quit<ENTER>
+" autocmd VimEnter * VimFilerExplorer
+
 "#####表示設定#####
 colorscheme desert "/usr/share/vim/vim74/colors/下から選択
 set number "行番号を表示する
