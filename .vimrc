@@ -18,6 +18,7 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'kien/ctrlp.vim'
 
 call neobundle#end()
 
