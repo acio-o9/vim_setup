@@ -40,6 +40,7 @@ let g:neocomplete#keyword_patterns._ = '\h\w*'
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 noremap <C-X><C-T> :VimFiler -split -simple -winwidth=45 -no-quit<ENTER>
+inoremap <silent> jj <ESC>
 autocmd VimEnter * VimFilerExplorer
 
 "#####表示設定#####
