@@ -19,6 +19,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'vim-jp/vimdoc-ja'
 
 call neobundle#end()
 
@@ -31,19 +32,23 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_enable_camel_case_completion = 0
+let g:neocomplete#enable_enable_camel_case_completion = -3
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 
 " vimfiler
-" let g:vimfiler_as_default_explorer = 1
-" noremap <C-X><C-T> :VimFiler -split -simple -winwidth=45 -no-quit<ENTER>
-" autocmd VimEnter * VimFilerExplorer
+let g:vimfiler_as_default_explorer = 1
+noremap <C-X><C-T> :VimFiler -split -simple -winwidth=45 -no-quit<ENTER>
+inoremap <silent> jj <ESC>
+"autocmd VimEnter * vimFilerExplorer
+
+"ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "#####表示設定#####
-colorscheme desert "/usr/share/vim/vim74/colors/下から選択
+colorscheme desert 
 set number "行番号を表示する
 set title "編集中のファイル名を表示 
 set showmatch "括弧入力時の対応する括弧を表示
