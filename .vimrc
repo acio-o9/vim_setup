@@ -21,6 +21,17 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'violetyk/neocomplete-php.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" lightline
+NeoBundle 'itchyny/lightline.vim'
+
+" snippet
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
 call neobundle#end()
 
@@ -43,7 +54,21 @@ let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:vimfiler_as_default_explorer = 1
 noremap <C-X><C-T> :VimFiler -split -simple -winwidth=30 -no-quit <ENTER>
 inoremap <silent> jj <ESC>
+inoremap <C-H> <BS>
 "autocmd VimEnter * vimFilerExplorer
+
+" vim-indent
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+let g:indent_guides_guide_size = 1
+
+"snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neocomplcache_snippets_dir='~/.vim/bundle/vim-snippets/snippets'
+
 
 "neocomplete-php
 let g:neocomplete_php_locale = 'ja'
@@ -52,7 +77,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "#####表示設定#####
 set background=dark
-colorscheme hybrid 
+colorscheme molokai 
 set number "行番号を表示する
 set title "編集中のファイル名を表示 
 set showmatch "括弧入力時の対応する括弧を表示
@@ -64,6 +89,8 @@ set expandtab
 set smartindent "オートインデント
 set enc=utf-8 "文字コード
 set textwidth=4
+set clipboard=unnamed,autoselect
+
 	
 "#####検索設定#####
 set ignorecase "大文字/小文字の区別なく検索する 
