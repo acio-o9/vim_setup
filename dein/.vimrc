@@ -137,13 +137,15 @@ nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 "スペースキーとbキーでバッファを表示
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 "スペースキーとrキーでレジストリを表示
-nnoremap <silent> [unite]r :<C-u>Unite<Space>register<jR>
+nnoremap <silent> [unite]r :<C-u>Unite<Space>register<CR>
 "スペースキーとtキーでタブを表示
 nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
 "スペースキーとENTERキーでfile_rec:!
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 "スペースキーとvキーでvimgrep
 nnoremap <silent> [unite]g :<C-u>Unite<Space>grep<CR>
+"スペースキーとoキーでoutline
+nnoremap <silent> [unite]g :<C-u>Unite<Space>outline<CR>
 "unite.vimを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
