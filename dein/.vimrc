@@ -29,6 +29,7 @@ if dein#load_state('/Users/maruc/.vim/bundle')
  call dein#add('Lokaltog/vim-powerline')
  call dein#add('Shougo/unite-outline')
  call dein#add('vim-scripts/taglist.vim')
+ call dein#add('tyru/caw.vim')
 
  " You can specify revision/branch/tag.
  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -334,3 +335,7 @@ let g:Powerline#Colorschemes#my#colorscheme = Pl#Colorscheme#Init([
     \ }),
   \ ])
 let g:Powerline_colorscheme='my'
+
+" comment
+nmap <C-K> <Plug>(caw:hatpos:toggle)
+vmap <C-K> <Plug>(caw:hatpos:toggle)
