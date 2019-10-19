@@ -30,6 +30,7 @@ if dein#load_state('/Users/maruc/.vim/bundle')
  call dein#add('Shougo/unite-outline')
  call dein#add('vim-scripts/taglist.vim')
  call dein#add('tyru/caw.vim')
+ call dein#add('tpope/vim-fugitive')
 
  " You can specify revision/branch/tag.
  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
