@@ -74,6 +74,9 @@ set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
+set wildmenu
+" 終了時に未保存でもエラーとしない
+set bufhidden=hide
 
 " view setting
 set t_Co=256
