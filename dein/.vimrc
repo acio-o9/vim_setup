@@ -29,9 +29,14 @@ if dein#load_state('/Users/maruc/.vim/bundle')
  call dein#add('Lokaltog/vim-powerline')
  call dein#add('Shougo/unite-outline')
  call dein#add('vim-scripts/taglist.vim')
- call dein#add('vim-syntastic/syntastic')
+ " call dein#add('vim-syntastic/syntastic')
  call dein#add('tyru/caw.vim')
  call dein#add('tpope/vim-fugitive')
+ call dein#add('tpope/vim-surround')
+ call dein#add('soramugi/auto-ctags.vim')
+ call dein#add('thinca/vim-quickrun')
+ call dein#add('godlygeek/tabular')
+ call dein#add('plasticboy/vim-markdown')
 
  " You can specify revision/branch/tag.
  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -67,11 +72,11 @@ endif
 syntax on
 set title
 set nu
-set relativenumber
 set cursorline
 set enc=utf-8
 set ignorecase
 set wrapscan
+set hlsearch
 inoremap <silent> jj <ESC>
 set tabstop=4
 set autoindent
@@ -80,6 +85,8 @@ set shiftwidth=4
 set wildmenu
 " 終了時に未保存でもエラーとしない
 set bufhidden=hide
+set pastetoggle=<F12>
+set clipboard+=unnamed
 
 " view setting
 set t_Co=256
@@ -159,7 +166,7 @@ endfunction"}}}
 " 試験的にタブ、スペース、改行文字の
 "タブ、空白、改行の可視化
 set list
-set listchars=tab:>.,trail:_,eol:?,extends:>,precedes:<,nbsp:%
+set listchars=tab:>.,trail:_,eol:↩,extends:>,precedes:<,nbsp:%
 "
 ""全角スペースをハイライト表示
 function! ZenkakuSpace()
@@ -350,3 +357,10 @@ let g:syntastic_check_on_wq = 0
 " comment
 nmap <C-K> <Plug>(caw:hatpos:toggle)
 vmap <C-K> <Plug>(caw:hatpos:toggle)
+
+" ctags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['~/']
+
+set tags+=~/tags
+
