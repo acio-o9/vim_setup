@@ -29,6 +29,7 @@ if dein#load_state('/Users/maruc/.vim/bundle')
  call dein#add('Lokaltog/vim-powerline')
  call dein#add('Shougo/unite-outline')
  call dein#add('vim-scripts/taglist.vim')
+ call dein#add('vim-syntastic/syntastic')
  call dein#add('tyru/caw.vim')
  call dein#add('tpope/vim-fugitive')
 
@@ -336,6 +337,15 @@ let g:Powerline#Colorschemes#my#colorscheme = Pl#Colorscheme#Init([
     \ }),
   \ ])
 let g:Powerline_colorscheme='my'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " comment
 nmap <C-K> <Plug>(caw:hatpos:toggle)
