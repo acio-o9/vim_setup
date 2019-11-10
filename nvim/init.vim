@@ -18,6 +18,8 @@ if dein#load_state('/Users/maruc/.cache/dein')
     call dein#add('kien/ctrlp.vim')
     call dein#add('tyru/caw.vim')
     call dein#add('soramugi/auto-ctags.vim')
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
 
     call dein#add('Shougo/vimproc.vim', {
         \ 'build': {
@@ -54,6 +56,7 @@ syntax on
 set title
 set nu
 set cursorline
+set ruler
 set enc=utf-8
 set ignorecase
 set wrapscan
@@ -72,7 +75,9 @@ imap [ []<LEFT>
 imap ( ()<LEFT>
 
 " color config
-colorscheme apprentice
+" colorscheme apprentice
+set background=dark
+colorscheme lucius
 
 " comment
 nmap <C-K> <Plug>(caw:hatpos:toggle)
@@ -83,6 +88,7 @@ vmap <C-K> <Plug>(caw:hatpos:toggle)
 " let g:auto_ctags = 1
 " let g:auto_ctags_directory_list = ['~/']
 
+" use silver-searcher
 if executable('ag')
     " Use ag in unite grep source.
     let g:unite_source_grep_command = 'ag'
