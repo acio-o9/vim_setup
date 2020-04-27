@@ -20,6 +20,7 @@ if dein#load_state('/Users/maruc/.cache/dein')
     call dein#add('soramugi/auto-ctags.vim')
     call dein#add('Shougo/deoplete.nvim')
     call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
+    call dein#add('Yggdroot/indentLine')
 
     call dein#add('Shougo/vimproc.vim', {
         \ 'build': {
@@ -87,6 +88,8 @@ vmap <C-K> <Plug>(caw:hatpos:toggle)
 " set tags+=~/tags
 " let g:auto_ctags = 1
 " let g:auto_ctags_directory_list = ['~/']
+" keymap-indentLine
+nmap <C-I> :IndentLinesToggle<CR>
 
 " use silver-searcher
 if executable('ag')
