@@ -68,28 +68,40 @@ set shiftwidth=4
 set wildmenu
 set clipboard+=unnamed
 
+" color config
+set background=dark
+colorscheme lucius
+
+" keymap
 noremap dt diffthis
 noremap do diffoff
 inoremap <silent> jj <ESC>
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+nmap <C-S> :source ~/.config/nvim/init.vim<CR>
 
-" color config
-" colorscheme apprentice
-set background=dark
-colorscheme lucius
-
-" comment
+" keymap-comment
 nmap <C-K> <Plug>(caw:hatpos:toggle)
 vmap <C-K> <Plug>(caw:hatpos:toggle)
 
-" ctags
-" set tags+=~/tags
-" let g:auto_ctags = 1
-" let g:auto_ctags_directory_list = ['~/']
 " keymap-indentLine
 nmap <C-I> :IndentLinesToggle<CR>
+
+" keymap-coc
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " use silver-searcher
 if executable('ag')
