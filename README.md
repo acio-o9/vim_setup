@@ -1,14 +1,18 @@
-# Vim の設定
+# Vim(NeoVim) setup
 
-## neobundle を利用する場合
+## for neovim
 
-    ln -s ~/vim_setup/neobudle/.vimrc ~/.vimrc
+```
+mkdir -p ~/.config/nvim
+ln -fns ~/vim_setup/nvim/init.vim ~/.config/nvim/init.vim
+```
 
-## dein を利用する場合
+## for vim (by dein)
 
-    mkdir -p ~/.vim/bundle
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-    sh installer.sh ~/.vim/bundle
+```
+mkdir -p ~/.vim/bundle
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.vim/bundle
 
-    ln -s ~/vim_setup/dein/.vimrc ~/.vimrc
-
+ln -s ~/vim_setup/dein/.vimrc ~/.vimrc
+```
