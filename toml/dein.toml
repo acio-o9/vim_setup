@@ -1,0 +1,83 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+  nmap <C-K> <Plug>(caw:hatpos:toggle)
+  vmap <C-K> <Plug>(caw:hatpos:toggle)
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+  nmap <C-I> :IndentLinesToggle<CR>
+'''
+
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-jedi'
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev= 'release'
+hook_add = '''
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  " Use `[g` and `]g` to navigate diagnostics
+  nmap <silent> [g <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+  endfunction
+'''
+hook_post_source = '''
+  call denite#custom#var('file_rec', 'command', ['rg', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  call denite#custom#var('grep', 'command', ['rg'])
+
+  " Change default action.
+  call denite#custom#kind('file', 'default_action', 'split')
+'''
