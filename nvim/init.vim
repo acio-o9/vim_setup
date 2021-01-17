@@ -56,7 +56,7 @@ set clipboard+=unnamed
 
 " color config
 set background=dark
-colorscheme lucius
+colorscheme apprentice
 
 " keymap
 noremap dt diffthis
