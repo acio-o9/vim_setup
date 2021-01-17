@@ -3,6 +3,7 @@ repo = 'Shougo/defx.nvim'
 do = ':UpdateRemotePlugins'
 hook_add = '''
     nnoremap <C-f><C-v> :Defx -split=vertical -winwidth=40 -direction=topleft `expand('%:p:h')`<CR>
+    nnoremap <C-f><C-f> :Defx -split=floating -winwidth=100 `expand('%:p:h')`<CR>
     autocmd FileType defx call s:defx_my_settings()
     function! s:defx_my_settings() abort
       " Define mappings
